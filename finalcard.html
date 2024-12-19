@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Ctext x=%225%22 y=%2215%22 font-family=%22Arial%22 font-size=%2215%22 fill=%22rgb(5,4,4)%22%3EI Love You %3C/text%3E%3C/svg%3E');
+                background-repeat: repeat;      /* Repeat the background */
+                background-size: 50px 50px;     /* Control the size of the repeated text */
+                margin: 0;
+                height: 100vh;                  /* Full screen height */
+                padding: 0;
+            }
+        </style>
+    </head>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Birthday Card</title>
+    <body style="background-color: rgb(171, 136, 252);"></body>
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7e6ff;
+        }
+
+        .card {
+            position: relative;
+            width: 400px;
+            height: 250px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-front {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .card-back {
+            background: rgb(243, 167, 167);
+            color: #333;
+            transform: rotateY(180deg);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-back img {
+            max-width: 90%;
+            max-height: 180px;
+            border-radius: 10px;
+        }
+
+        .card-back p {
+            margin-top: 10px;
+            font-size: 20px;
+        }
+        
+
+    </style>
+    
+</head>
+<body>
+    <div class="card" onclick="celebrate()">
+        <div class="card-inner">
+            <div class="card-front">
+                🎉 Click to Open 🎉
+            </div>
+            <div class="card-back">
+                <img src="https://i.pinimg.com/1200x/6d/cf/72/6dcf72a33ccfbe4dd38d7a9218b15855.jpg" alt="Happy Birthday">
+                <p>Happy Birthday, Love!<br>You’re my sunshine every day, i love you to the moon and back. 🌟💖</p>
+    
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Confetti and Sound -->
+    <script>
+       // Play Sound
+function celebrate() {
+    const audio = new Audio('C:/Users/NICOL MICHEL/Documents/VISUAL STUDIO CODE/digital  card/Mitski - My Love Mine All Mine (Official Lyric Video).mp3');
+    audio.play();
+    launchConfetti();
+}
+
+        // Confetti Effect
+        function launchConfetti() {
+            const confetti = new JSConfetti();
+            confetti.addConfetti({
+                emojis: ['🎉', '🎂', '💖', '🌟,💕,💖'],
+                confettiColors: ['#ff9a9e', '#fad0c4', '#f7e6ff', '#ffeaa7'],
+            });
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+</body>
+</html>
